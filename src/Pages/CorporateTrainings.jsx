@@ -105,7 +105,11 @@ function CorporateTrainings() {
         image={pageContent[5].image}
         switchSide={true}
       />
-      <ContactForm />
+
+      <p className="w-full text-center text-2xl mt-10  px-4">
+        To request a training service, kindly fill in the form below
+      </p>
+      <ContactForm trainingForm={true} />
 
       <Footer />
     </div>

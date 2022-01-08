@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import emailjs from "emailjs-com";
 
-function ContactForm() {
+function ContactForm({ trainingForm }) {
   const API =
     "https://li87y3kq6a.execute-api.us-east-1.amazonaws.com/dev/email/send";
 
@@ -42,99 +42,160 @@ function ContactForm() {
   };
 
   function sendMail(e) {
-    e.preventDefault();
-    emailjs
-      .sendForm(
-        "service_aydyvfl",
-        "template_vqa6x4w",
-        e.target,
-        "user_rXVRHJW6N4xVZUrPrHEOa"
-      )
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    if (!trainingForm) {
+      e.preventDefault();
+      emailjs
+        .sendForm(
+          "service_aydyvfl",
+          "template_vqa6x4w",
+          e.target,
+          "user_rXVRHJW6N4xVZUrPrHEOa"
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      e.preventDefault();
+      emailjs
+        .sendForm(
+          "service_aydyvfl",
+          "template_0ogzqp8",
+          e.target,
+          "user_rXVRHJW6N4xVZUrPrHEOa"
+        )
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   }
 
   return (
     <div className="flex justify-center my-16 ">
-      <form className="sm:w-1/2 w-full px-4" onSubmit={sendMail}>
-        <p className="mb-4 ">Name</p>
-        <input
-          onChange={getName}
-          type="text"
-          name="name"
-          className="w-full p-4 bg-gray-200 mb-6"
-        />
-        <p className="mb-4 ">Email Address</p>
-        <input
-          onChange={getEmail}
-          type="email"
-          name="user_email"
-          className="w-full p-4 bg-gray-200 mb-6"
-        />
-        <p className="mb-4 ">Phone Number</p>
-        <input
-          onChange={getPhoneNumber}
-          type="text"
-          name="user_number"
-          className="w-full p-4 bg-gray-200 mb-6"
-        />
-        <p className="mb-4 ">Age</p>
-        <input
-          onChange={getAge}
-          type="number"
-          name="user_age"
-          className="w-full p-4 bg-gray-200 mb-6"
-        />
-        <p className="mb-4 ">Occupation</p>
-        <input
-          onChange={getOccupation}
-          type="text"
-          name="user_occupation"
-          className="w-full p-4 bg-gray-200 mb-6"
-        />
-        <p className="mb-4 ">Which mentorship package would you love</p>
-        <div className="flex flex-col">
-          <div className="w-full">
-            <input
-              type="radio"
-              id="Private-Mentorship"
-              name="mentorship_package"
-              value="Private Mentorship"
-              onChange={getMentorship}
-              className="p-4 mr-4 bg-gray-200 mb-6"
-            />
-            <label className=" text-normal" for="Private-Mentorship">
-              Private Mentorship
-            </label>
-          </div>
-          <div className="w-full">
-            <input
-              type="radio"
-              id="Personal-Coaching"
-              name="mentorship_package"
-              value="Personal Coaching"
-              onChange={getMentorship}
-              className="p-4 mr-4 bg-gray-200 mb-6"
-            />
-            <label className=" text-normal" for="Personal-Coaching">
-              Personal Coaching
-            </label>
-          </div>
-        </div>
-
-        <div className="flex justify-end">
+      {!trainingForm && (
+        <form className="sm:w-1/2 w-full px-4" onSubmit={sendMail}>
+          <p className="mb-4 ">Name</p>
           <input
-            type="submit"
-            value="Submit Form"
-            className="sm:py-6 py-4 sm:px-16 px-6 bg-[#FFD945]"
-           
+            onChange={getName}
+            type="text"
+            name="name"
+            className="w-full p-4 bg-gray-200 mb-6"
           />
-        </div>
-      </form>
+          <p className="mb-4 ">Email Address</p>
+          <input
+            onChange={getEmail}
+            type="email"
+            name="user_email"
+            className="w-full p-4 bg-gray-200 mb-6"
+          />
+          <p className="mb-4 ">Phone Number</p>
+          <input
+            onChange={getPhoneNumber}
+            type="text"
+            name="user_number"
+            className="w-full p-4 bg-gray-200 mb-6"
+          />
+          <p className="mb-4 ">Age</p>
+          <input
+            onChange={getAge}
+            type="number"
+            name="user_age"
+            className="w-full p-4 bg-gray-200 mb-6"
+          />
+          <p className="mb-4 ">Occupation</p>
+          <input
+            onChange={getOccupation}
+            type="text"
+            name="user_occupation"
+            className="w-full p-4 bg-gray-200 mb-6"
+          />
+          <p className="mb-4 ">Which mentorship package would you love</p>
+          <div className="flex flex-col">
+            <div className="w-full">
+              <input
+                type="radio"
+                id="Private-Mentorship"
+                name="mentorship_package"
+                value="Private Mentorship"
+                onChange={getMentorship}
+                className="p-4 mr-4 bg-gray-200 mb-6"
+              />
+              <label className=" text-normal" for="Private-Mentorship">
+                Private Mentorship
+              </label>
+            </div>
+            <div className="w-full">
+              <input
+                type="radio"
+                id="Personal-Coaching"
+                name="mentorship_package"
+                value="Personal Coaching"
+                onChange={getMentorship}
+                className="p-4 mr-4 bg-gray-200 mb-6"
+              />
+              <label className=" text-normal" for="Personal-Coaching">
+                Personal Coaching
+              </label>
+            </div>
+          </div>
+
+          <div className="flex justify-end">
+            <input
+              type="submit"
+              value="Submit Form"
+              className="sm:py-6 py-4 cursor-pointer sm:px-16 px-6 bg-[#FFD945]"
+            />
+          </div>
+        </form>
+      )}
+
+      {trainingForm && (
+        <form className="sm:w-1/2 w-full px-4" onSubmit={sendMail}>
+          <p className="mb-4 ">Name</p>
+          <input
+            onChange={getName}
+            type="text"
+            name="name"
+            className="w-full p-4 bg-gray-200 mb-6"
+          />
+          <p className="mb-4 ">Email Address</p>
+          <input
+            onChange={getEmail}
+            type="email"
+            name="user_email"
+            className="w-full p-4 bg-gray-200 mb-6"
+          />
+          <p className="mb-4 ">Phone Number</p>
+          <input
+            onChange={getPhoneNumber}
+            type="text"
+            name="user_number"
+            className="w-full p-4 bg-gray-200 mb-6"
+          />
+          <p className="mb-4 ">
+            Enter the details of the training you would love your staff to have
+          </p>
+          <textarea
+            name="user_message"
+            className="w-full p-4 bg-gray-200 mb-6"
+            rows={5}
+            cols={5}
+          />
+
+          <div className="flex justify-end">
+            <input
+              type="submit"
+              value="Submit Form"
+              className="sm:py-6 py-4 cursor-pointer sm:px-16 px-6 bg-[#FFD945]"
+            />
+          </div>
+        </form>
+      )}
     </div>
   );
 }
