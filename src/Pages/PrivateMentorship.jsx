@@ -33,7 +33,7 @@ function PrivateMentorship() {
       section: "section-two",
       title: "We are on a mission",
       content:
-        "Our private mentorship packages run for 3 months, during this period of time, you would have 12 contacts with our lead coaches, during with they would discuss your issues under closed doors, and help you figure your way out of the mess./n To sign up kindly fill the form below. /n  Please provide your correct contact details. once this is done, you would be contacted by our lead coach to discuss further steps.",
+        " Our private mentorship packages are for serious individuals who wish to get answers to some of the most difficult questions in their life. For a period of 3 months, you would have 12 contacts with our head coach. You will receive specialized attention to discuss topics/issues that are important to you. This can be anything; from relationships, addiction, career related issues, financial issues etc./n To sign up kindly fill the form below. /n  Please provide your correct contact details. once this is done, you would be contacted by our lead coach to discuss further steps.",
       buttonText: "Learn about our trainings",
       image: section2Image,
     },

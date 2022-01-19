@@ -9,7 +9,7 @@ function DoubleSection({
   image,
   switchSide,
   showAdditions,
-  additionalContent
+  additionalContent,
 }) {
   return (
     <div className="mb-8">
@@ -36,14 +36,12 @@ function DoubleSection({
                   How does it run?
                 </p>
                 <p className="text-bold my-4">
-                  {additionalContent.split('/n')[0]}
+                  {additionalContent.split("/n")[0]}
                 </p>
                 <p className="text-bold my-4">
-                {additionalContent.split('/n')[1]}
+                  {additionalContent.split("/n")[1]}
                 </p>
-                <p className="font-bold">
-                {additionalContent.split('/n')[2]}
-                </p>
+                <p className="font-bold">{additionalContent.split("/n")[2]}</p>
               </div>
             )}
           </div>
@@ -65,7 +63,10 @@ function DoubleSection({
               {title}
             </h1>
             <p className="text-normal sm:w-3/4 w-full sm:my-6 my-2 text-left ">
-              {content}
+              {content.split("/n")[0]}
+            </p>
+            <p className="text-normal sm:w-3/4 w-full sm:my-4 my-4 text-left ">
+              {content.split("/n")[1]}
             </p>
 
             <Button link="/corporate-trainings" text={buttonText} />

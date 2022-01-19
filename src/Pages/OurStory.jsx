@@ -30,9 +30,9 @@ function OurStory() {
 
     {
       section: "section-two",
-      title: "We are on a mission",
+      title: "We have a clear vision",
       content:
-        "We work towards helping you understand your own power and it is this knowledge of knowing your own abilities that helps you find a way out of the hole that you may have fallen into.",
+        "Our vision is to groom people who can do more of the things that makes them useful, fulfilled, purposeful and live a higher life irrespective of their gender or status./n We believe in the potential of women and children from any strata of the society and we wish to provide them an equal opportunity in doing what they love with a touch of excellence.",
       buttonText: "Learn about our trainings",
       image: section2Image,
     },
