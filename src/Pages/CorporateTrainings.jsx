@@ -65,22 +65,26 @@ function CorporateTrainings() {
   ];
   return (
     <div>
-      <HeroSection
-        title={pageContent[0].title}
-        content={pageContent[0].content}
-        image={pageContent[0].image}
-      />
+      <div>
+        <HeroSection
+          title={pageContent[0].title}
+          content={pageContent[0].content}
+          image={pageContent[0].image}
+        />
+      </div>
 
-      <DoubleSection
-        title={pageContent[1].title}
-        content={pageContent[1].content}
-        image={pageContent[1].image}
-        switchSide={false}
-        showAdditions={true}
-        additionalContent={pageContent[2].content}
-      />
+      <div className="mb-12">
+        <DoubleSection
+          title={pageContent[1].title}
+          content={pageContent[1].content}
+          image={pageContent[1].image}
+          switchSide={false}
+          showAdditions={true}
+          additionalContent={pageContent[2].content}
+        />
+      </div>
 
-      <h1 className="sm:my-24 my-18 sm:text-4xl leading-[64px] text-center text-2xl">
+      <h1 className="sm:my-24 my-18 md:mt-96 md:text-3xl sm:text-4xl leading-[64px] text-center text-2xl">
         Poplar Training Topics
       </h1>
 

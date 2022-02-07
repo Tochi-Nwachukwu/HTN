@@ -14,9 +14,9 @@ function DoubleSection({
   return (
     <div className="mb-8">
       {switchSide == false && (
-        <div className="w-full sm:h-screen grid grid-cols-1 sm:grid-cols-2 sm:pl-12 px-4 mt-8">
+        <div className="w-full sm:h-screen grid grid-cols-1 gap-6 sm:grid-cols-2 sm:pl-12 px-4 my-8">
           <div className="w-full flex flex-col items-left justify-center mb-12">
-            <h1 className="sm:text-4xl text-2xl sm:my-4 my-2 sm:text-left leading-[64px]">
+            <h1 className="sm:text-4xl text-2xl md:text-3xl p-6 sm:my-4 my-2 sm:text-left leading-[64px] md:leading-[80px]">
               {title}
             </h1>
             <p className="text-normal sm:w-3/4 w-full my-4 text-left sm:my-10">
@@ -53,13 +53,13 @@ function DoubleSection({
       )}
 
       {switchSide == true && (
-        <div className="w-full sm:h-screen grid grid-cols-1 sm:grid-cols-2 sm:pl-12 px-4 mt-8">
+        <div className="w-full sm:h-screen grid grid-cols-1 sm:grid-cols-2 gap-6 sm:pl-12 px-4 md:my-32">
           <div
             style={{ backgroundImage: `url(${image})` }}
             className="w-full h-[420px] sm:h-full bg-contain bg-no-repeat bg-left"
           ></div>
           <div className="w-full flex flex-col items-left justify-center ">
-            <h1 className="sm:text-4xl text-2xl sm:my-4 mt-4 mb-2 sm:text-left leading-[64px]">
+            <h1 className="sm:text-4xl md:text-3xl text-2xl sm:my-4 mt-4 mb-2 sm:text-left leading-[64px] md:leading-[80px]">
               {title}
             </h1>
             <p className="text-normal sm:w-3/4 w-full sm:my-6 my-2 text-left ">

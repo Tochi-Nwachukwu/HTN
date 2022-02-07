@@ -46,23 +46,29 @@ function PrivateMentorship() {
   ];
   return (
     <div>
-      <HeroSection
-        title={pageContent[0].title}
-        content={pageContent[0].content}
-        image={pageContent[0].image}
-      />
+      <div>
+        <HeroSection
+          title={pageContent[0].title}
+          content={pageContent[0].content}
+          image={pageContent[0].image}
+        />
+      </div>
 
-      <DoubleSection
-        title={pageContent[1].title}
-        content={pageContent[1].content}
-        image={pageContent[1].image}
-        switchSide={false}
-        showAdditions={true}
-        additionalContent={pageContent[2].content}
-      />
+      <div>
+        <DoubleSection
+          title={pageContent[1].title}
+          content={pageContent[1].content}
+          image={pageContent[1].image}
+          switchSide={false}
+          showAdditions={true}
+          additionalContent={pageContent[2].content}
+        />
+      </div>
 
-      <h1 className="my-16 sm:text-3xl text-center text-2xl">Sign up here</h1>
-      <ContactForm />
+      <div className=" md:mt-96">
+        <h1 className=" sm:text-3xl text-center text-2xl">Sign up here</h1>
+        <ContactForm />
+      </div>
 
       <Footer />
     </div>
