@@ -61,7 +61,7 @@ function PrivateCoaching() {
         additionalContent={pageContent[2].content}
       />
 
-      <h1 className="my-16 sm:text-3xl text-center text-2xl">Sign up here</h1>
+      <h1 className="my-16 md:mt-[32rem]  sm:text-3xl text-center text-2xl">Sign up here</h1>
       <ContactForm />
 
       <Footer />
